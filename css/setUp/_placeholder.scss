@@ -1,0 +1,189 @@
+%f-r-c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%f-c-c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-horizontal {
+    display: flex;
+    align-items: center;
+}
+
+%ab-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%bg-contain {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+%bg-cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+%scrollbar-none {
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+%box-center{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+// ------------------------------- position
+
+// 左上
+@mixin ab-lt($left, $top) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    @content;
+}
+
+// 左下
+@mixin ab-lb($left, $bottom) {
+    position: absolute;
+    left: $left;
+    bottom: $bottom;
+    @content;
+}
+
+//右上
+@mixin ab-rt($right, $top) {
+    position: absolute;
+    right: $right;
+    top: $top;
+    @content;
+}
+
+//右下
+@mixin ab-rb($right, $bottom) {
+    position: absolute;
+    right: $right;
+    bottom: $bottom;
+    @content;
+}
+
+
+
+// ------------------------------- relative
+
+
+// 左上
+@mixin re-lt($left, $top) {
+    position: relative;
+    left: $left;
+    top: $top;
+    @content;
+}
+
+// 左下
+@mixin re-lb($left, $bottom) {
+    position: relative;
+    left: $left;
+    bottom: $bottom;
+    @content;
+}
+
+//右上
+@mixin re-rt($right, $top) {
+    position: relative;
+    right: $right;
+    top: $top;
+    @content;
+}
+
+//右下
+@mixin re-rb($right, $bottom) {
+    position: relative;
+    right: $right;
+    bottom: $bottom;
+    @content;
+}
+
+//fixed
+
+// 左上
+@mixin fixed-lt($left, $top) {
+    position: fixed;
+    left: $left;
+    top: $top;
+    @content;
+}
+
+// 左下
+@mixin fixed-lb($left, $bottom) {
+    position: fixed;
+    left: $left;
+    bottom: $bottom;
+    @content;
+}
+
+//右上
+@mixin fixed-rt($right, $top) {
+    position: fixed;
+    right: $right;
+    top: $top;
+    @content;
+}
+
+//右下
+@mixin fixed-rb($right, $bottom) {
+    position: fixed;
+    right: $right;
+    bottom: $bottom;
+    @content;
+}
+
+
+
+// 偽元素
+@mixin after($content, $width, $height) {
+    &::after {
+        display: block;
+        content: $content;
+        width: $width;
+        height: $height;
+        @content;
+    }
+}
+
+@mixin before($content, $width, $height) {
+    &::before {
+        display: block;
+        content: $content;
+        width: $width;
+        height: $height;
+        @content;
+    }
+}
+
+//盒子長寬設定
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+
+

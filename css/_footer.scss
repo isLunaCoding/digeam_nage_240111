@@ -1,0 +1,133 @@
+footer {
+    position: relative;
+    background-size: contain;
+    background: #1a0734;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Microsoft JhengHei';
+    color: #fff;
+
+}
+
+.footerbox {
+    max-width: 1200px;
+    font-size: 14px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footerbox_logo {
+    display: flex;
+    justify-content: center;
+}
+
+a.logo_digeam {
+    background: url(../img/footer/logo_digeam.png) center center no-repeat;
+    width: 168px;
+    height: 40px;
+    pointer-events: none;
+}
+
+a.logo_rw {
+    background: url(../img/footer/vfun.png) center center no-repeat;
+    width: 216px;
+    height: 38px;
+    margin-left: 20px;
+    pointer-events: none;
+}
+
+.spec {
+    line-height: 1.2rem;
+    margin-left: 20px;
+}
+
+.spec a {
+    color: yellow;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.spec a:nth-child(odd) {
+    margin-left: 7px;
+}
+
+.spec a:hover {
+    color: #fff;
+}
+
+.Copyright{
+    color: #b0a7ff;
+}
+
+.classlavel {
+    margin: 0 19px;
+    display: flex;
+    justify-content: center;
+}
+
+.classlavel img {
+    width: 57px;
+    height: 57px;
+}
+
+.classlavel ul {
+    list-style: none;
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.classlavel li {
+    color: #b0a7ff;
+    line-height: 1rem;
+}
+
+.classlavel li:nth-child(4) {
+    color: yellow;
+}
+
+/* ========== footer ========== */
+
+@include lg {
+    .footer {
+        align-items: center;
+    }
+
+    .footerbox {
+        max-width: 90%;
+        font-size: 12px;
+        line-height: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footerbox_logo {
+        width: 100%;
+        align-items: center;
+    }
+
+    .spec {
+        width: 100%;
+        text-align: center;
+        order: 1;
+    }
+
+    .spec,
+    .classlavel {
+        margin: 20px 0;
+    }
+
+    a.logo_rw,
+    .classlavel {
+        margin: 10px auto;
+    }
+
+    .footerbox_logo {
+        flex-direction: column;
+    }
+}

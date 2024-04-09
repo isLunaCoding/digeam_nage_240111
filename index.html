@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="fb:app_id" content="575812793509156" />
+    <meta property="og:title" content="N-age 古惑人生 | 賽季服火爆登場 2/1共赴戰場" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="經典街頭冒險線上遊戲【N-age 古惑人生】新服火熱啟動，預約即送【+6技能武器】你敢來戰嗎？" />
+    <meta property="og:locale" content="zh_tw" />
+    <meta property="article:author" content="https://www.facebook.com/DiGeamNage/" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <meta property="og:image" content="https://nage.digeam.com/event/20240111/img/fb_share.jpg" />
+    <meta property="og:url" content="https://nage.digeam.com/event/20240111/index.html" />
+    <meta name="author" content="DiGeam" />
+    <meta name="keywords" content="N-age,古惑人生,DiGeam,MMORPG,8+9,+6技能武器,美麗新世界,美麗人生,新服預約,街頭" />
+    <meta name="description" content="
+經典街頭冒險線上遊戲【N-age 古惑人生】新服火熱啟動，預約即送【+6技能武器】你敢來戰嗎？" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="apple-touch-icon" href="../../img/ico/favicon.ico" />
+    <link rel="icon" sizes="48x48" href="../../img/ico/icon.ico" />
+    <title>N-age 古惑人生 | 賽季服火爆登場 2/1共赴戰場</title>
+    <link rel="stylesheet" href="./css/style.css?v11.77" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+        (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-PB8RXNM');
+    </script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PB8RXNM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="wrap" id="wrap">
+        <div id="fb-root"></div>
+
+        <div class="loading" :class="{ 'fade-out': !isLoading }" v-cloak>
+            <div class="barBox">
+                <progress class="bar" :value="bar" max="100"></progress>
+                <span class="bar__value">{{ barVal }}</span>
+            </div>
+        </div>
+        <div class="mask2" v-if="pop.mask2 == true" v-cloak></div>
+        <div class="mask" v-if="pop.mask == true" @click="popClose()"></div>
+        <div class="popB" v-if="pop.openB == true" v-cloak>
+            <div class="popBwrap">
+                <div class="popBtitle">
+                    <img src="./img/contentTitle.png" alt="活動說明" v-if="pop.type == 'content'" />
+                    <img src="./img/noticeTitle.png" alt="注意事項" v-if="pop.type == 'notice'" />
+                    <img src="./img/awardTitle.png" alt="獎勵說明" v-if="pop.type == 'award'" />
+                </div>
+                <div class="popBcontent">
+                    <ul v-if="pop.type == 'content'">
+                        <li>完成新服預約後，即可參加活動。 </li>
+                        <li>
+                            參與BOSS討伐戰，成功擊殺BOSS後所有有造成傷害的玩家皆可獲得對應獎勵。
+                            <img src="./img/table2.png" alt="成功擊殺BOSS可獲得對應獎勵" />
+                        </li>
+
+                        <li>
+                            每日可進行1次攻擊，將機率性打出暴擊傷害，總傷害更新若有延遲，請以(F5)刷新頁面後的數值為準。
+                        </li>
+                        <li>
+                            透過「分享」活動頁面，可獲得3次擊殺機會，每帳號每日限分享一次。
+                        </li>
+                        <li>
+                            此活動獎勵皆不可交易，使用期限自提領中心領出當下起算，到期後將自動由系統回收。
+                        </li>
+                        <li>
+                            擊殺獎勵將於賽季伺服器開放後7日內，於官方網站「<a href="https://nage.digeam.com/reward/"
+                                target="_blank">領獎專區</a>」開放領取。
+                        </li>
+                        <li>
+                            抽獎性質獎勵活動結果將於賽季伺服器開放後7日內，另行公告得獎者。
+                        </li>
+                    </ul>
+                    <ul v-if="pop.type == 'notice'">
+                        <li>
+                            新服預約活動時間：2024/01/11(四) 16:00~ 2024/02/15(四) 23:59。
+                        </li>
+                        <li>每組掘夢網會員帳號僅限參加一次新服預約。</li>
+                        <li>
+                            「BOSS討伐戰」至少需參與一次擊殺，才能獲取擊殺該BOSS的獎勵。
+                        </li>
+                        <li>
+                            「BOSS討伐戰」之個人總傷害，僅記入單一帳號對BOSS造成的傷害值。
+                        </li>
+                        <li>
+                            各活動獎項可能有交易、販售、使用次數或使用時間等限制，實際道具限制依遊戲內為準。
+                        </li>
+                        <li>
+                            「新服預約」獎勵，將於賽季伺服器開放後3日內，於「<a href="https://nage.digeam.com/reward/"
+                                target="_blank">領獎專區</a>」開放領取。
+                        </li>
+                        <li>
+                            「BOSS討伐戰」獎勵，即日起至01/31(三)
+                            23:59止，已達成之活動獎勵將於賽季伺服器開放後3日內，於「<a href="https://nage.digeam.com/reward/"
+                                target="_blank">領獎專區</a>」開放領取，其餘獎勵將於活動結束後3日內開放領取。
+                        </li>
+                        <li>
+                            活動參加、得獎資格與獎項領取僅適用於「烈焰戰域」賽季伺服器，且不得轉讓或贈與第三人、轉移至其他帳號。
+                        </li>
+                        <li>
+                            本活動各項辦法及規定，以官方說明為準，掘夢網公司擁有活動最終保留、變更、修改或撤回、取消獎項發送之權利。​​
+                        </li>
+                    </ul>
+                    <img src="./img/table.png" alt="" v-if="pop.type == 'award'" />
+                </div>
+                <div class="popBtn">
+                    <button @click="popClose()">關閉</button>
+                </div>
+            </div>
+        </div>
+        <div class="popS" v-if="pop.openS == true" v-cloak>
+            <p class="popSmsg" v-html="pop.msg"></p>
+            <div class="popBtn">
+                <button v-if="pop.btnType == 'cancel'" @click="popClose()">
+                    取消
+                </button>
+                <button v-if="pop.btnType == 'close'" @click="popClose()">
+                    關閉
+                </button>
+                <button v-if="pop.btnType == 'agree'" @click="popClose()">
+                    確認
+                </button>
+                <a href="https://www.digeam.com/login" v-if="pop.btnType == 'login'">前往</a>
+            </div>
+        </div>
+
+        <header class="header" id="header">
+            <div class="box">
+                <div class="hpL"></div>
+                <div class="logoBox">
+                    <a href="https://nage.digeam.com/index/" target="_blank">
+                        <img src="./img/header/logo.png" alt="" /></a>
+                </div>
+                <div class="hpR"></div>
+                <div class="bar" :class="{ active: menuActive }" @click="toggleMenu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="barBox" :class="{ active: menuActive }" @click="toggleMenu">
+                    <ul class="barList">
+                        <li>
+                            <a href="https://nage.digeam.com/index/" target="_blank" class="logo">
+                            </a>
+                        </li>
+                        <li><a href="#sec1Title">新服預約</a></li>
+                        <li><a href="#sec2Title">BOSS討伐戰</a></li>
+                        <li><a href="#sec3Title">賽季服特色</a></li>
+                        <li><a href="#sec4Title">開服活動</a></li>
+                        <li>
+                            <a href="javascript:" @click="popOpen('notice')">注意事項</a>
+                        </li>
+                        <li><a href="#header">TOP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="titleBox">
+                <img src="./img/header/headerTitle.png" alt="賽季服火爆登場 2/1共赴戰場" class="title" data-aos="fade-right"
+                    data-aos-duration="500" data-aos-delay="300" class="mainti aos-init aos-animate" />
+                <img src="./img/M/mTitle.png" alt="賽季服火爆登場 2/1共赴戰場" class="titleM" />
+            </div>
+            <div class="linkBar">
+                <a href="https://www.digeam.com/register_nage" target="_blank" class="re">註冊會員</a>
+                <a href="#sec1" class="rs">立即預約</a>
+                <a href="javascript:" target="_blank" class="dl" @click="popLink()">遊戲下載</a>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="#sec1" :class="{ active : activeSec == 'sec1'}">新服預約</a>
+            <a href="#sec2" :class="{ active : activeSec == 'sec2'}">BOSS討伐戰</a>
+            <a href="#sec3" :class="{ active : activeSec == 'sec3'}">賽季服特色</a>
+            <a href="#sec4" :class="{ active : activeSec == 'sec4'}">開服活動</a>
+            <a href="javascript:" @click="popOpen('notice')">注意事項</a>
+            <a href="#header">TOP</a>
+        </nav>
+
+        <a href="https://nage.digeam.com/2s_240127/" target="_blank" class="preregGift" v-if="preregGiftLink"></a>
+
+        <aside class="aside">
+            <div class="reseverImg">
+                <button class="reseverBtn" @click="popOpen('award')"></button>
+            </div>
+        </aside>
+
+        <section class="sec1 sec" id="sec1">
+            <article class="TxtBox">
+                <img src="./img/sec1/sec1Title.png" alt="烈焰戰域-新服預約" class="title" data-aos="fade-right"
+                    id="sec1Title" />
+                <img src="./img/sec1/sec1Text.png" alt="全新賽季服，技能武器登入送，裝備寶石掉落率200%" class="text" />
+                <img src="./img/M/mAward.png" alt="立即預約即可得黃金寶石x5、各類經驗券、嘻哈套裝、酷炫滑板等你來拿" class="mAward"
+                    data-aos="fade-left" />
+            </article>
+            <article class="stepWrap">
+                <div class="stepBox">
+                    <div class="step1"></div>
+                    <div class="stepTxt">
+                        <p>登入DiGeam掘夢網平台帳號</p>
+
+                        <form id="logout-form" action="https://www.digeam.com/logout" method="POST" v-if="user.account">
+                            <input type="hidden" name="return_url" id="return_url"
+                                value="<?php echo base64_encode('https://'.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]); ?>" />
+
+                            <span class="user" data-value="{{ user.account }}">
+                                {{ user.account }}
+                            </span>
+
+                            <button class="logout" id="logout-button" type="submit" value="Submit"
+                                @click="updateReturnUrl()">
+                                登出
+                            </button>
+                        </form>
+
+                        <a href="https://www.digeam.com/login" class="login" v-if="!user.account"
+                            @click="updateReturnUrl()">登入</a>
+
+                        <p>
+                            ※新用戶註冊點這裡<a href="https://www.digeam.com/register_nage" target="_blank">前往註冊</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stepBox">
+                    <div class="step2"></div>
+                    <div class="stepTxt">
+                        <p>填寫手機號碼，並同意接收遊戲相關簡訊</p>
+                        <div class="inputBox">
+                            <select name="手機區碼" id="area" v-model="user.moblieArea">
+                                <option value="+886">台灣(+886)</option>
+                                <option value="+852">香港(+852)</option>
+                                <option value="+853">澳門(+853)</option>
+                            </select>
+                            <input type="tel" name="mobile" id="mobile" maxlength="10" v-model="user.moblieNum" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stepBox">
+                    <div class="step3"></div>
+                    <div class="stepTxt">
+                        <p>按讚官方Facebook粉絲團</p>
+                        <div class="fb-page fbBox" data-href="https://www.facebook.com/DiGeamNage" data-tabs="timeline"
+                            data-width="300" data-height="72" data-small-header="true"
+                            data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/DiGeamNage" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/DiGeamNage">DiGeam 古惑人生Nage</a>
+                            </blockquote>
+                        </div>
+                        <div class="inputBox">
+                            <input type="checkbox" name="check" id="check" class="check" v-model="user.read" />
+
+                            <label for="check">我已閱讀<a
+                                    href="https://www.digeam.com/terms2">隱私權政策</a>且同意接收活動簡訊</a></label>
+                        </div>
+                        <button class="submit" @click="resever()">完成新服預約</button>
+                        <button class="submitM" @click="resever()"></button>
+                    </div>
+                </div>
+            </article>
+            <button class="awardM" @click="popOpen('award')">獎勵說明</button>
+        </section>
+
+        <section class="sec2 sec" id="sec2">
+            <div class="light"></div>
+            <article class="txtBox">
+                <img src="./img/sec2/sec2Title.png" alt="BOSS討伐戰" class="title" data-aos="fade-right" id="sec2Title" />
+                <img src="./img/sec2/sec2Text.png" alt="參與討伐傷害達標再抽3000元點數" class="text" />
+            </article>
+            <div class="awardM">
+                <img v-if="currentBoss === -1" :src="bossData[2].awardImg" :src="bossData[currentBoss].awardImg"
+                    alt="擊殺怪物獎勵" />
+                <img v-else :src="bossData[currentBoss].awardImg" alt="擊殺怪物獎勵" />
+            </div>
+            <article class="bossBox">
+                <div class="info" v-if="currentBoss >= 0 || currentBoss === -1">
+                    <p class="name">
+                        {{ currentBoss === -1 ? bossData[2].name :
+                        bossData[currentBoss].name }}
+                    </p>
+                    <div class="hpBox">
+                        HP
+                        <div class="hpBg"></div>
+                    </div>
+                </div>
+
+                <div class="attackGif">
+                    <div class="critAttack" ref="critAttack"></div>
+                    <div class="normalAttack" ref="normalAttack"></div>
+                </div>
+                <div class="bossImgBox">
+                    <div class="attackGif">
+                        <div class="critAttack" ref="critAttack"></div>
+                        <div class="normalAttack" ref="normalAttack"></div>
+                    </div>
+                    <div class="hurtBox">
+                        <div class="critBox">
+                            <p class="critVal" ref="critVal">{{ user.attackVal1 }}</p>
+                        </div>
+                        <p class="normalVal" ref="normalVal">{{ user.attackVal2 }}</p>
+                    </div>
+                    <div class="imgBox">
+                        <img v-if="currentBoss === -1" :src="bossData[2].img" :alt="bossData[2].name"
+                            class="isBoss done" />
+                        <img v-else :src="bossData[currentBoss].img" :alt="bossData[currentBoss].name" class="isBoss"
+                            ref="bossShake" />
+                    </div>
+
+                    <div class="isBossDone" v-if="isBossDone == true"></div>
+                </div>
+            </article>
+            <article class="other">
+                <div class="award">
+                    <img v-if="currentBoss === -1" :src="bossData[2].awardImg" :src="bossData[currentBoss].awardImg"
+                        alt="擊殺怪物獎勵" />
+                    <img v-else :src="bossData[currentBoss].awardImg" alt="擊殺怪物獎勵" />
+                    <button class="eventInfo" @click="popOpen('content')">
+                        活動說明
+                    </button>
+                </div>
+                <div class="operate">
+                    <div class="btnBox">
+                        <div class="attackBox">
+                            <button class="attack" @click="attack()">攻擊</button>
+                            <p>剩餘{{ user.attackNum }}次</p>
+                        </div>
+                        <div class="shareBox">
+                            <a class="share" @click="share()">分享</a>
+                            <p>攻擊+3次</p>
+                        </div>
+                    </div>
+                    <div class="valueBox">
+                        <div class="userAttackBox">
+                            <p>您打出的總傷害</p>
+                            <p class="totalAttack" ref="totalVal">{{ user.totalAttack }}</p>
+                        </div>
+                        <div class="attackList">
+                            <div class="liBox">
+                                <div class="pBox">
+                                    <p class="num">個人總傷害達10,000</p>
+                                </div>
+                                <div class="pBox2">
+                                    <p class="awardNum"><span>獎勵</span>能量結晶x50</p>
+                                </div>
+                            </div>
+                            <div class="liBox">
+                                <div class="pBox">
+                                    <p class="num">個人總傷害達50,000</p>
+                                </div>
+                                <div class="pBox2">
+                                    <p class="awardNum">
+                                        <span>抽</span>掘夢網點數1,000點（3名）
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="liBox">
+                                <div class="pBox">
+                                    <p class="num">個人總傷害達100,000</p>
+                                </div>
+                                <div class="pBox2">
+                                    <p class="awardNum">
+                                        <span>抽</span>掘夢網點數3,000點（1名）
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="eventInfoM" @click="popOpen('content')">
+                    活動說明
+                </button>
+            </article>
+        </section>
+
+        <section class="sec3 sec" id="sec3">
+            <article class="txtBox">
+                <img src="./img/sec3/sec3Title.png" alt="賽季服特色" class="title" data-aos="fade-right" id="sec3Title" />
+            </article>
+
+            <article class="wrapS">
+                <div class="swiper">
+                    <div class="swiper-wrapper" v-if="watchWidth == false">
+                        <div class="swiper-slide slide" v-for="slide in sec3Data.D">
+                            <img :src="slide.src" :alt="slide.alt" :key="slide.id" />
+                        </div>
+                    </div>
+                    <div class="swiper-wrapper" v-else="watchWidth == true">
+                        <div class="swiper-slide slide" v-for="slide in sec3Data.M">
+                            <img :src="slide.src" :alt="slide.alt" :key="slide.id" />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </article>
+        </section>
+
+        <section class="sec4 sec" id="sec4">
+            <article class="txtBox">
+                <img src="./img/sec4/sec4Title.png" alt="開服活動" class="title" data-aos="fade-right" id="sec4Title" />
+                <p>歡慶開服，限定活動火熱展開</p>
+            </article>
+            <article class="wrap">
+                <div class="wrapS">
+                    <div class="swiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="slide in sec4Data.images" :key="slide.id">
+                                <a v-if="isTimeReached" :href="slide.link" target="_blank" class="overlay">前往了解</a>
+                                <div class="overlay" v-else>後續開放</div>
+                                <img :src="slide.src" alt="slide.alt" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </article>
+
+            <!-- <p class="date">距離開啟活動頁面，還有<span>isDiff</span>天</p> -->
+        </section>
+
+        <footer>
+            <div class="footerbox">
+                <div class="footerbox_logo">
+                    <a class="logo_digeam"></a>
+                    <a class="logo_rw"></a>
+                </div>
+                <div class="spec">
+                    <p class="Copyright">
+                        掘夢網股份有限公司©{{ new Date().getFullYear() }}<br />Copyright©DiGeam
+                        Corporation. All Rights Reserved.
+                    </p>
+                    <a href="https://www.digeam.com/terms" target="_blank">會員服務條款</a>
+                    <a href="https://www.digeam.com/terms2" target="_blank">隱私條款</a>
+                </div>
+                <div class="classlavel">
+                    <img src="./img/footer/icon_15.png" alt="輔15級" />
+                    <ul>
+                        <li>本遊戲為免費使用，部分內容涉及暴力情節。</li>
+                        <li>遊戲內另提供購買虛擬遊戲幣、物品等付費服務。</li>
+                        <li>請注意遊戲時間，避免沉迷。</li>
+                        <li>本遊戲服務區域包含台灣、香港、澳門。</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3.2.4/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v18.0"
+    nonce="l7pjWBLA"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./js/all.js?v12.55"></script>
+</html>

@@ -1,0 +1,64 @@
+.aside{
+
+    @include size(100%, 100%);
+    max-width: 330px;
+    max-height: 336px;
+    @include fixed-rt(0%, 15%);
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+
+    @include md(){
+        display: none
+    }
+
+    .reseverImg {
+        @extend %bg-contain;
+        @include size(330px,336px);
+        background-image: url(../img/sec1/reserveImg.png);
+        position: relative;
+
+        .reseverBtn {
+            @extend %bg-contain;
+            @include size(130px,36px);
+            @include ab-rb(69px,43px);
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            background-image: url(../img/sec1/awardManual.png);
+        }
+    }
+
+    
+
+}
+
+.preregGift{
+    z-index: 11;
+    @extend %bg-contain;
+    @include size(266px,315px);
+    @include fixed-rt(-0.5%, 55%);
+    cursor: pointer;
+    background-image: url(../img/preregGiftBtn.png);
+    transition: all .3s ease-in-out;
+
+    @include md(){
+        width: 230px;
+    }
+
+    @include sm(){
+        width: 200px;
+    }
+
+    @include xlg(){
+        @include fixed-rt(-1.5%, 30%);
+        width: 150px;
+        height: 220px;
+    }
+
+    @include xs(){
+        @include fixed-rt(-1.5%, 40%);
+        width: 100px;
+    }
+
+}

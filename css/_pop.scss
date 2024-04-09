@@ -1,0 +1,156 @@
+[v-cloak] {
+    display: none;
+}
+
+.mask {
+    // display: none;
+    position: fixed;
+    width: 101%;
+    height: 101%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 52;
+    cursor: pointer;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(54, 20, 20, 0.8));
+}
+
+.mask2 {
+    // display: none;
+    position: fixed;
+    width: 101%;
+    height: 101%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    cursor: pointer;
+}
+
+.popB {
+    // display: none;
+    @include size(100%, 668px);
+    @include fixed-lt(50%, 50%);
+    @extend %bg-contain;
+    transform: translate(-50%, -50%);
+    z-index: 53;
+    max-width: 715px;
+    background-image: url(../img/pop1Bg.png);
+    @extend %f-c-c;
+
+    &wrap{
+        width: 80%;
+        height: 80%;
+        @extend %f-c-c;
+
+        @include xlg(){
+            height: 50%;
+        }
+
+
+        @include xs(){
+            height: 50%;
+            max-height: 300px;
+        }
+
+        
+        @include xsm(){
+            height: 45%;
+        }
+
+        @include xxs(){
+            height: 40%;
+        }
+    }
+
+    &title {
+        margin: 10px 0;
+        img {
+            margin: 0 auto;
+            @include xlg(){
+                max-width: 100px;
+            }
+        }
+    }
+
+    &content {
+
+        overflow-y: auto;
+
+        @include xs(){
+            max-height: 262px;
+        }
+
+        @include xxs(){
+            max-height: 176px;
+        }
+
+        img {
+            width: 100%;
+        }
+ 
+        li{
+            line-height: 1.3rem;
+            list-style-type: decimal;
+            color: #000;
+            font-weight: 600;
+            margin: 10px 0;
+            margin-left: 30px;
+
+            a{
+                color: #37b5de;
+            }
+        }
+    }
+}
+
+.popS {
+    // display: none;
+    @include size(100%, 286px);
+    @include fixed-lt(50%, 50%);
+    @extend %bg-contain;
+    transform: translate(-50%, -50%);
+    z-index: 53;
+    max-width: 477px;
+    background-image: url(../img/pop2Bg.png);
+    @extend %f-c-c;
+   
+    &msg{
+        width: 80%;
+        margin-top: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        color: #000;
+        line-height: 1.5rem;
+    }
+  
+}
+
+.popBtn{
+    width: 80%;
+    margin-top: 5%;
+    @extend %f-r-c;
+    button , a {
+        cursor: pointer;
+        width: 100%;
+        @extend %bg-contain;
+        display: inline;
+        padding: 10px 15px;
+        font-weight: 600;
+        border: none;
+        background-color: transparent;
+        max-width: 105px;
+        text-align: center;
+        color: #fff;
+        font-size: 1.1rem;
+        text-shadow: 0px 0px 2px #000 ,  0px 0px 2px #000;
+        background-image: url(../img/popBtn.png);
+    }
+
+    button{
+        @include xsm(){
+            max-width: 65px;
+        }
+    }
+}

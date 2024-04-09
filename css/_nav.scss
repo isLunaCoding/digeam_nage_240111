@@ -1,0 +1,31 @@
+
+.nav{
+    @extend %f-c-c;
+    align-items: start;
+    @include size(100%,100%);
+    max-width: 190px;
+    max-height: 348px;
+    @include fixed-lt(0%,30%);
+    z-index: 2;
+    a{
+        font-size: 1.2rem;
+        color: yellow;
+        font-weight: 500;
+        font-style: oblique;
+        @include size(190px,48px);
+        padding: 12px 10px;
+        margin: 5px 0;
+        @extend %bg-contain;
+        background-image: url(../img/asideBg.png);
+
+        &:hover , &.active{
+            @include size(235px,48px);
+            color: black;
+            background-image: url(../img/asideBgActive.png);
+        }
+    }
+
+    @include lg(){
+        display: none;
+    }
+}

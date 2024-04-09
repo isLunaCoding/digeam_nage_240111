@@ -1,0 +1,179 @@
+.sec3 {
+    @include size(100%, auto);
+    min-height: 950px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/sec3/sec3Bg.jpg);
+    @extend %f-c-c;
+
+
+    @include xlg() {
+        min-height: 600px;
+        padding: 70px 0;
+    }
+
+    .txtBox {
+        margin: 0 auto;
+        margin-bottom: 1%;
+
+        @extend %f-c-c;
+
+        .title {
+            width: 100%;
+            max-width: 453px;
+            z-index: 2;
+
+            @include xlg() {
+                width: 80%;
+            }
+        }
+
+        .text {
+            width: 100%;
+            margin-top: -45px;
+            max-width: 564px;
+
+            @include xs() {
+                margin-top: -20px;
+            }
+        }
+    }
+
+    .wrapS {
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 1%;
+
+        @include lg() {
+            width: 80%;
+        }
+
+        @include md() {
+            width: 100%;
+            margin-top: 3.5%;
+        }
+
+        @include sm() {
+            width: 100%;
+        }
+
+
+
+
+        .swiper {
+            padding-bottom: 4%;
+
+            @include sm() {
+                padding-bottom: 10%;
+            }
+
+            .swiper-slide {
+                margin: 0 auto;
+                @extend %f-r-c;
+                user-select: none;
+
+                img {
+                    margin: 0 auto;
+                    width: 80%;
+                    filter: drop-shadow(1px 2px 10px #000);
+
+                    @include xlg() {
+                        width: 70%;
+                    }
+                }
+            }
+
+            // .swiper-slide-prev , .swiper-slide-next{
+            //     opacity: 0;
+            // }
+
+            .swiper-pagination {
+                display: inline;
+                margin: 0 auto;
+                // @include ab-lb(46.5%,0px);
+
+                &-bullet {
+                    margin: 0 3px;
+                    background: #fff;
+                }
+            }
+
+
+        }
+
+        // .swiper-button-prev{
+        //     @include size(60px,102px);
+        //     @extend %bg-contain;
+        //     background-image: url(../img/sec3/arrowL.png);
+        //     &::after{
+        //         content:'';
+        //     }
+
+        //     @include xlg(){
+        //         width: 40px;
+        //     }
+        // }
+
+        // .swiper-button-next{
+        //     @include size(60px,102px);
+        //     @extend %bg-contain;
+        //     background-image: url(../img/sec3/arrowR.png);
+        //     &::after{
+        //         content: '';
+        //     }
+
+        //     @include xlg(){
+        //         width: 40px;
+        //     }
+        // }
+
+        .swiperM {
+            display: none;
+
+        }
+    }
+}
+
+// .sec3 {
+//     @include size(100%, auto);
+//     max-height: 950px;
+//     padding: 70px 0;
+//     background-position: center;
+//     background-repeat: no-repeat;
+
+//     @include lg() {
+//         background-size: cover;
+//         max-height: 1360px;
+//         background-position: center bottom;
+//         background-image: url(../img/M/mSec2Bg.png);
+//     }
+
+//     // .light{
+//     //     @include size(1101px,611px);
+//     //     @include ab-lt(22%,9%);
+//     //     mix-blend-mode:lighten;
+//     //     background-image: url(../img/sec2/sec2Light.png);
+//     // }
+
+//     .txtBox {
+//         margin: 0 auto;
+//         @extend %f-c-c;
+
+//         .title {
+//             width: 100%;
+//             max-width: 499px;
+//             z-index: 2;
+//         }
+
+//         .text {
+//             width: 100%;
+//             margin-top: -45px;
+//             max-width: 564px;
+
+//             @include xs(){
+//                 margin-top: -20px;
+//             }
+//         }
+//     }
+
+// }
